@@ -1,0 +1,29 @@
+{
+  "name": "add-bom-cli",
+  "description": "packageDescription",
+  "version": "0.1.0",
+  "main": "add-bom-cli.js",
+  "scripts": {
+    "lint": "jshint --reporter node_modules/jshint-summary/lib/summary add-bom-cli.js",
+    "audit": "nsp package",
+    "deps": "npm run deps:missing && npm run deps:extra",
+    "deps:missing": "dependency-check package.json",
+    "deps:extra": "dependency-check package.json --extra --no-dev --ignore",
+    "check": "npm run audit && npm run deps && npm outdated --depth 0",
+    "validate": "npm ls"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "devDependencies": {
+    "dependency-check": "latest",
+    "jshint": "latest",
+    "jshint-summary": "latest",
+    "precommit-hook": "latest",
+    "nsp": "latest"
+  },
+  "dependencies": {
+    "meow": "~3.3.0",
+    "is-utf8": "~0.2.0"
+  }
+}
