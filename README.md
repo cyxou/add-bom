@@ -8,9 +8,9 @@ npm install add-bom --save-dev
 ```
 Then you can
 ```
-node add-bom.js file-without-bom.js
+node add-bom.js -f file-without-bom.js
 ```
 or from the npm script section of package.json
 ```
-add-bom file-without-bom.js
+add-bom -f file-without-bom.js
 ```
