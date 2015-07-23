@@ -1,10 +1,16 @@
 {
-  "name": "add-bom-cli",
+  "name": "add-bom",
   "description": "packageDescription",
-  "version": "0.1.0",
-  "main": "add-bom-cli.js",
+  "license": "MIT",
+  "author": "Alex Sukhovetchenko <shf84@rambler.ru>",
+  "version": "1.0.0",
+  "main": "add-bom.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyxou/add-bom-cli.git"
+  },
   "scripts": {
-    "lint": "jshint --reporter node_modules/jshint-summary/lib/summary add-bom-cli.js",
+    "lint": "jshint --reporter node_modules/jshint-summary/lib/summary add-bom.js bin/add-bom-cli.js",
     "audit": "nsp package",
     "deps": "npm run deps:missing && npm run deps:extra",
     "deps:missing": "dependency-check package.json",
@@ -23,7 +29,14 @@
     "nsp": "latest"
   },
   "dependencies": {
-    "meow": "~3.3.0",
+    "commander": "^2.8.1",
     "is-utf8": "~0.2.0"
-  }
+  },
+  "bin": {
+    "add-bom": "./bin/add-bom-cli.js"
+  },
+  "keywords": [
+    "bom",
+    "byte order markers"
+  ]
 }
